@@ -108,7 +108,7 @@ fn main() {
         .include("curl/lib")
         .include("curl/include")
         .define("BUILDING_LIBCURL", None)
-        .define("CURL_DISABLE_CRYPTO_AUTH", Some(0))
+        .define("CURL_DISABLE_CRYPTO_AUTH", Some("false"))
         .define("CURL_DISABLE_DICT", None)
         .define("CURL_DISABLE_GOPHER", None)
         .define("CURL_DISABLE_IMAP", None)
