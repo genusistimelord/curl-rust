@@ -19,6 +19,10 @@ fn main() {
         return println!("cargo:rustc-flags=-l curl");
     }
 
+	if cfg!(feature = "force-system-lib-on-osx") && target.contains("windows") {
+        return println!("cargo:rustc-flags=-l curl");
+    }
+
     // If the static-curl feature is disabled, probe for a system-wide libcurl.
     if !cfg!(feature = "static-curl") {
         // OSX and Haiku ships libcurl by default, so we just use that version
