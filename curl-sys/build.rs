@@ -20,7 +20,7 @@ fn main() {
     }
 
 	if cfg!(feature = "force-system-lib-on-osx") && target.contains("windows") {
-        return println!("cargo:rustc-flags=-l curl");
+        return println!("cargo:rustc-flags=-l libcurl");
     }
 
     // If the static-curl feature is disabled, probe for a system-wide libcurl.
